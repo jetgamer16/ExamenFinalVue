@@ -59,6 +59,8 @@ import { useDataStore } from '@/stores/store';
             alert("El alumno debe matricularse en un grupo ")
             return;
         }
+            await this.alumnRepo.editAlumnos(alumn)
+            this.$router.push("/alumnos/"+alumn.grup)
         if(!this.edit){
             try{
                 await this.alumnRepo.addAlumnos(alumn)
